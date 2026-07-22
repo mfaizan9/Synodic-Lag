@@ -24,10 +24,14 @@ body {
 
 /* The foundation's `.app-layout__right` rule is unreachable, so the min-width
    that keeps a grid column from overflowing is restated here on our own class. */
+/* The foundation aligns grid items to `start`, which leaves the two panels at
+   different heights and their bottom edges ragged. Stretching them makes the
+   side-by-side panels share one height and one baseline top and bottom. (In the
+   stacked single-column layout each row holds one panel, so this is a no-op.) */
 .sim-layout {
   gap: 1rem;
   padding: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* The foundation sizes the diagram column at a flat 25rem. That is right at
